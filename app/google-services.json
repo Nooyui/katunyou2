@@ -1,0 +1,58 @@
+{
+  "project_info": {
+    "project_number": "787254216838",
+    "firebase_url": "https://katunyou2.firebaseio.com",
+    "project_id": "katunyou2",
+    "storage_bucket": "katunyou2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:787254216838:android:cc5be3c6f41cb92c",
+        "android_client_info": {
+          "package_name": "aging.health.katunyou"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "787254216838-0u5om8ovsqdps4rlatqvcnm7i6j7ufet.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "aging.health.katunyou",
+            "certificate_hash": "f3757578cc0cc30f8d4741c72b07d4fc4d04f988"
+          }
+        },
+        {
+          "client_id": "787254216838-4nugariu54ql7rnt64e4f6ipaf433q6k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4ljWNU-hu97l_Ee8M__Dw1mwCoi-PG2o"
+        },
+        {
+          "current_key": "AIzaSyC6iXNNVT3X18SSkNYFN7C6qjztV3_IbaE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "787254216838-4nugariu54ql7rnt64e4f6ipaf433q6k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">katunyou</string>
+    <string name="action_settings">Settings</string>
+    <string name="menu_logout">Logout Account</string>
+    <string name="menu_exit">Exit App</string>
+</resources>
+
+

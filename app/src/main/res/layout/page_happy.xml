@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <TabHost xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/tabhost"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorFront2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+            </TabWidget>
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:id="@+id/tab1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView6"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_marginTop="30dp"
+                        app:srcCompat="@drawable/smile"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true" />
+
+                    <TextView
+                        android:id="@+id/textView14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="รายละเอียด"
+                        android:layout_marginRight="24dp"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginTop="37dp"
+                        android:layout_below="@+id/imageView6"
+                        android:layout_toLeftOf="@+id/imageView6"
+                        android:layout_toStartOf="@+id/imageView6" />
+
+                    <ImageView
+                        android:id="@+id/imageView7"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        app:srcCompat="@drawable/heart"
+                        android:layout_alignBottom="@+id/textView23"
+                        android:layout_alignLeft="@+id/textView14"
+                        android:layout_alignStart="@+id/textView14"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginStart="15dp" />
+
+                    <ImageView
+                        android:id="@+id/imageView8"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        app:srcCompat="@drawable/walk"
+                        android:layout_marginTop="16dp"
+                        android:layout_below="@+id/imageView7"
+                        android:layout_alignLeft="@+id/imageView7"
+                        android:layout_alignStart="@+id/imageView7" />
+
+                    <ImageView
+                        android:id="@+id/imageView9"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        app:srcCompat="@drawable/cal"
+                        android:layout_marginTop="21dp"
+                        android:layout_below="@+id/imageView8"
+                        android:layout_alignLeft="@+id/imageView8"
+                        android:layout_alignStart="@+id/imageView8" />
+
+                    <ImageView
+                        android:id="@+id/imageView10"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        app:srcCompat="@drawable/sleep"
+                        android:layout_marginTop="19dp"
+                        android:layout_below="@+id/imageView9"
+                        android:layout_alignLeft="@+id/imageView9"
+                        android:layout_alignStart="@+id/imageView9" />
+
+                    <TextView
+                        android:id="@+id/textView23"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="การเต้นของหัวใจ"
+                        android:layout_alignBaseline="@+id/textView27"
+                        android:layout_alignBottom="@+id/textView27"
+                        android:layout_toRightOf="@+id/textView14"
+                        android:layout_toEndOf="@+id/textView14" />
+
+                    <TextView
+                        android:id="@+id/textView24"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="การเดิน"
+                        android:layout_alignBottom="@+id/imageView8"
+                        android:layout_toRightOf="@+id/textView14"
+                        android:layout_toEndOf="@+id/textView14" />
+
+                    <TextView
+                        android:id="@+id/textView25"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="การเผาผลาญแคลลอรี่"
+                        android:layout_alignBaseline="@+id/textView29"
+                        android:layout_alignBottom="@+id/textView29"
+                        android:layout_toRightOf="@+id/textView14"
+                        android:layout_toEndOf="@+id/textView14" />
+
+                    <TextView
+                        android:id="@+id/textView26"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="เวลาที่นอนหลับ"
+                        android:layout_alignBottom="@+id/imageView10"
+                        android:layout_toRightOf="@+id/textView14"
+                        android:layout_toEndOf="@+id/textView14" />
+
+                    <TextView
+                        android:id="@+id/textView27"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ปรกติ"
+                        android:layout_marginLeft="31dp"
+                        android:layout_marginStart="31dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_below="@+id/textView14"
+                        android:layout_toRightOf="@+id/textView25"
+                        android:layout_toEndOf="@+id/textView25" />
+
+                    <TextView
+                        android:id="@+id/textView28"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignEnd="@+id/textView27"
+                        android:layout_alignRight="@+id/textView27"
+                        android:layout_alignTop="@+id/textView24"
+                        android:text="ปรกติ" />
+
+                    <TextView
+                        android:id="@+id/textView29"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/imageView10"
+                        android:layout_alignLeft="@+id/textView28"
+                        android:layout_alignStart="@+id/textView28"
+                        android:text="ดีเยี่ยม" />
+
+                    <TextView
+                        android:id="@+id/textView30"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/textView29"
+                        android:layout_alignStart="@+id/textView29"
+                        android:layout_alignTop="@+id/textView26"
+                        android:text="ปรกติ" />
+
+                    <TextView
+                        android:id="@+id/textView31"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="28dp"
+                        android:layout_marginRight="28dp"
+                        android:text=">"
+                        android:layout_alignBaseline="@+id/textView27"
+                        android:layout_alignBottom="@+id/textView27"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true" />
+
+                    <TextView
+                        android:id="@+id/textView32"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignEnd="@+id/textView31"
+                        android:layout_alignRight="@+id/textView31"
+                        android:layout_alignTop="@+id/textView28"
+                        android:text=">" />
+
+                    <TextView
+                        android:id="@+id/textView33"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/textView32"
+                        android:layout_alignStart="@+id/textView32"
+                        android:layout_alignTop="@+id/textView29"
+                        android:text=">" />
+
+                    <TextView
+                        android:id="@+id/textView34"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignEnd="@+id/textView33"
+                        android:layout_alignRight="@+id/textView33"
+                        android:layout_alignTop="@+id/textView30"
+                        android:text=">" />
+
+                    <TextView
+                        android:id="@+id/textView35"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="28dp"
+                        android:text="โทรหาท่าน"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignRight="@+id/textView26"
+                        android:layout_alignEnd="@+id/textView26" />
+
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/tab2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:id="@+id/textView16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="23dp"
+                        android:layout_marginStart="23dp"
+                        android:layout_marginTop="6dp"/>
+
+
+                </RelativeLayout>
+
+
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>

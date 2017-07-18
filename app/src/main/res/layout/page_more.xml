@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorFront2">
+
+    <ImageView
+        android:id="@+id/imageView11"
+        app:srcCompat="@drawable/card"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignLeft="@+id/imageView14"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/imageView14"
+        android:layout_marginTop="18dp" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="38dp"
+        android:layout_marginStart="38dp"
+        android:text="แก้ไขข้อมูลส่วนตัว"
+        android:textStyle="bold"
+        android:layout_above="@+id/textView29"
+        android:layout_alignLeft="@+id/button_save"
+        android:layout_alignStart="@+id/button_save" />
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageView14"
+        android:layout_alignLeft="@+id/textView24"
+        android:layout_alignStart="@+id/textView24"
+        android:text="แก้ไขข้อมูลของคนที่คุณรัก ฃื่อ อายุ น้ำหนัก ส่วนสูง"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35dp"
+        android:layout_marginStart="35dp"
+        android:textStyle="bold"
+        android:text=">"
+        android:layout_above="@+id/textView29"
+        android:layout_toRightOf="@+id/button_save"
+        android:layout_toEndOf="@+id/button_save" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        app:srcCompat="@drawable/ambulance"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignLeft="@+id/imageView11"
+        android:layout_alignStart="@+id/imageView11"
+        android:layout_below="@+id/imageView11"
+        android:layout_marginTop="12dp" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="13dp"
+        android:textStyle="bold"
+        android:text="แก้ไขเเบอร์โทรฉุกเฉิน"
+        android:layout_alignBottom="@+id/imageView12"
+        android:layout_alignLeft="@+id/textView18"
+        android:layout_alignStart="@+id/textView18" />
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="เพิ่ม และแก้ไขเบอร์โทีฉุกเฉิน"
+        android:textSize="10sp"
+        android:layout_above="@+id/imageView14"
+        android:layout_alignLeft="@+id/textView22"
+        android:layout_alignStart="@+id/textView22" />
+
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text=">"
+        android:layout_alignBaseline="@+id/textView20"
+        android:layout_alignBottom="@+id/textView20"
+        android:layout_alignLeft="@+id/textView19"
+        android:layout_alignStart="@+id/textView19" />
+
+    <ImageView
+        android:id="@+id/imageView13"
+        app:srcCompat="@drawable/mobile"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignLeft="@+id/imageView12"
+        android:layout_alignStart="@+id/imageView12"
+        android:layout_below="@+id/imageView12"
+        android:layout_marginTop="12dp" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="แก้ไขรหัสอุปกรณ์"
+        android:layout_above="@+id/textView28"
+        android:layout_alignLeft="@+id/textView25"
+        android:layout_alignStart="@+id/textView25" />
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="การแก้ไขรหัสอุปกรณ์เพื่อการเข้าถึง อุปกรณ์"
+        android:textSize="10sp"
+        android:layout_above="@+id/imageView12"
+        android:layout_alignLeft="@+id/textView18"
+        android:layout_alignStart="@+id/textView18" />
+
+
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text=">"
+        android:layout_alignBaseline="@+id/textView22"
+        android:layout_alignBottom="@+id/textView22"
+        android:layout_alignLeft="@+id/textView26"
+        android:layout_alignStart="@+id/textView26" />
+
+    <ImageView
+        android:id="@+id/imageView14"
+        app:srcCompat="@drawable/about"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/imageView13"
+        android:layout_margin="10dp"
+        android:layout_marginTop="27dp"
+        android:layout_toLeftOf="@+id/textView18"
+        android:layout_toStartOf="@+id/textView18" />
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageView14"
+        android:layout_alignLeft="@+id/textView20"
+        android:layout_alignStart="@+id/textView20"
+        android:layout_marginBottom="13dp"
+        android:textStyle="bold"
+        android:text="เกี่ยวกับเรา" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ข้อมูลของ กตัญญู แอปพลิเคชั่น"
+        android:textSize="10sp"
+        android:layout_alignBottom="@+id/imageView12"
+        android:layout_alignLeft="@+id/textView20"
+        android:layout_alignStart="@+id/textView20" />
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text=">"
+        android:layout_alignBaseline="@+id/textView24"
+        android:layout_alignBottom="@+id/textView24"
+        android:layout_alignRight="@+id/textView21"
+        android:layout_alignEnd="@+id/textView21" />
+
+    <Button
+        android:id="@+id/button_save"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="23dp"
+        android:background="@color/colorpage"
+        android:text=" Save "
+        android:textColor="@color/colorFront2"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>
