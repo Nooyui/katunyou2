@@ -16,12 +16,16 @@ public class SettingActivity extends AppCompatActivity {
 
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState){
 
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.setting);
 
         //FirebaseApp.initializeApp(this);
+
+
+
+
 
 
         // Get token
@@ -38,7 +42,8 @@ public class SettingActivity extends AppCompatActivity {
         //settings = PreferenceManager.getDefaultSharedPreferences(this);
 
 
-    }
+
+    }//onCreate
 
 
 
