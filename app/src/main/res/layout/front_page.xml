@@ -31,8 +31,7 @@
         android:layout_toLeftOf="@+id/imageView2"
         android:layout_toStartOf="@+id/imageView2"
         android:layout_marginRight="10dp"
-        android:layout_marginEnd="10dp"
-        />
+        android:layout_marginEnd="10dp" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

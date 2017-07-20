@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,11 +19,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.iid.FirebaseInstanceId;
-import com.google.firebase.messaging.FirebaseMessaging;
 
 
-public class Register extends AppCompatActivity {
+public class Register extends AppCompatActivity  {
 
 
     Button btnNext_to_page3;
@@ -65,37 +62,7 @@ public class Register extends AppCompatActivity {
         Toast.makeText(this, hello, Toast.LENGTH_SHORT).show();
         btnNext_to_page3 = (Button) findViewById(R.id.button_next_to_page3);
 
-        if (getIntent().getExtras() != null) {
-            for (String key : getIntent().getExtras().keySet()) {
-                Object value = getIntent().getExtras().get(key);
-                Log.d(TAG, "Key: " + key + " Value: " + value);
-            }
-        }
 
-        findViewById(R.id.subscribeButton).setOnClickListener((View.OnClickListener) this);
-        findViewById(R.id.unsubscribeButton).setOnClickListener((View.OnClickListener) this);
-        findViewById(R.id.logTokenButton).setOnClickListener((View.OnClickListener) this);
-    }
-
-
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.subscribeButton:
-                FirebaseMessaging.getInstance().subscribeToTopic("droiddev/news");
-                Log.d(TAG, "SubscribeToTopic");
-                Toast.makeText(Register.this, "SubscribeToTopic", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.unsubscribeButton:
-                FirebaseMessaging.getInstance().unsubscribeFromTopic("droiddev/news");
-                Log.d(TAG, "UnsubscribeFromTopic");
-                Toast.makeText(Register.this, "UnsubscribeFromTopic", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.logTokenButton:
-                String token = FirebaseInstanceId.getInstance().getToken();
-                Log.d(TAG, "Token : " + token);
-                Toast.makeText(Register.this, "Token : " + token, Toast.LENGTH_SHORT).show();
-                break;
-        }
 
         // buttonpost.setOnClickListener(new View.OnClickListener() {
         // @Override
