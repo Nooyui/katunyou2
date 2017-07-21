@@ -88,3 +88,4 @@ public class Register_page3 extends AppCompatActivity {
         }
     }
 }
+
