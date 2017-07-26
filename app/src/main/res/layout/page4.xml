@@ -50,7 +50,7 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         app:srcCompat="@drawable/old"
-        android:layout_marginBottom="26dp"
+        android:layout_marginBottom="66dp"
         android:layout_above="@+id/textView13"
         android:layout_centerHorizontal="true" />
 
@@ -59,7 +59,7 @@
         android:id="@+id/editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button"
+        android:layout_above="@+id/buttonSave"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="78dp"
         android:ems="10"
@@ -99,10 +99,11 @@
         android:layout_marginEnd="19dp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonSave"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/colorFront2"
+        android:onClick="onShowDialogWindow"
         android:text= " SAVE "
         android:textStyle="bold"
         android:textSize="20sp"

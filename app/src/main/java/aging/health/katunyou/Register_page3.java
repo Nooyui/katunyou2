@@ -4,9 +4,12 @@ package aging.health.katunyou;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.Auth;
@@ -15,7 +18,7 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class Register_page3 extends AppCompatActivity {
+public class Register_page3 extends AppCompatActivity   {
     FirebaseAuth mAuth;
     GoogleApiClient mGoogleApiClient;
 
@@ -87,5 +90,15 @@ public class Register_page3 extends AppCompatActivity {
                 return false;
         }
     }
+
+
+    public void onShowDialogWindow(View v) {
+        FragmentManager fm = getSupportFragmentManager();
+        EditNameDialog editNameDialog = EditNameDialog.newInstance("                 สวัสดี");
+        editNameDialog.show(fm, "fragment_edit_name");
+
+    }
+
 }
+
 
