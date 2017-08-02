@@ -56,7 +56,7 @@ public class Register extends AppCompatActivity  {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.page2);
+        setContentView(R.layout.page_register1);
         mAuth = FirebaseAuth.getInstance();
         EventBus.getDefault().register(this);
 

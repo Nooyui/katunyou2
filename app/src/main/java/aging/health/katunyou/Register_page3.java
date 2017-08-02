@@ -4,7 +4,6 @@ package aging.health.katunyou;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -26,7 +25,7 @@ public class Register_page3 extends AppCompatActivity   {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.page4);
+        setContentView(R.layout.page_register3);
         mAuth = FirebaseAuth.getInstance();
 
 

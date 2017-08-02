@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity  {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.front_page);
+        setContentView(R.layout.page_login);
         mAuth = FirebaseAuth.getInstance();
         button = (SignInButton) findViewById(R.id.sign_in_button);
         EventBus.getDefault().register(this);

@@ -26,7 +26,7 @@ public class Register_page2 extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.page3);
+        setContentView(R.layout.page_register2);
         mAuth = FirebaseAuth.getInstance();
 
         btnNext_to_page4 = (Button) findViewById(R.id.button_next_to_page4);
