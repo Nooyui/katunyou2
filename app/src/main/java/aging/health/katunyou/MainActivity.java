@@ -3,6 +3,7 @@ package aging.health.katunyou;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -25,6 +26,9 @@ import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+
 public class MainActivity extends AppCompatActivity  {
 
     public static final String TAG = MainActivity.class.getSimpleName();
@@ -40,6 +44,7 @@ public class MainActivity extends AppCompatActivity  {
         setContentView(R.layout.front_page);
         mAuth = FirebaseAuth.getInstance();
         button = (SignInButton) findViewById(R.id.sign_in_button);
+        EventBus.getDefault().register(this);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -142,7 +147,7 @@ public class MainActivity extends AppCompatActivity  {
                     Log.d(TAG, "firebase user email: " + email);
                     Toast.makeText(MainActivity.this, "user email: " + email, Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(MainActivity.this, Register.class);
-                    intent.putExtra("KEY", "hello from login");
+                    intent.putExtra("KEY", "Wellcom to Katunyou");
                     startActivity(intent);
                     finish();
 
@@ -160,6 +165,34 @@ public class MainActivity extends AppCompatActivity  {
     }
 
     // [END basic_write]
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
+    }
+
+    public static final class MessageEvent {
+        public String message;
+
+        public MessageEvent(String message) {
+            this.message = message;
+        }
+    }
+
+    @Subscribe
+    public void onReceiveMessage(final Register.MessageEvent event){
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                String message = event.message;
+                AlertDialog.Builder builder =
+                        new AlertDialog.Builder(MainActivity.this);
+                builder.setMessage(message);
+                builder.show();
+            }
+        });
+    }
+
 
 }
 

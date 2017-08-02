@@ -31,6 +31,7 @@ public class Register_page3 extends AppCompatActivity   {
 
 
 
+
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
@@ -94,7 +95,7 @@ public class Register_page3 extends AppCompatActivity   {
 
     public void onShowDialogWindow(View v) {
         FragmentManager fm = getSupportFragmentManager();
-        EditNameDialog editNameDialog = EditNameDialog.newInstance("                 สวัสดี");
+        EditNameDialog editNameDialog = EditNameDialog.newInstance("                   สวัสดี");
         editNameDialog.show(fm, "fragment_edit_name");
 
     }

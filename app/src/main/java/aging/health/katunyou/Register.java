@@ -3,6 +3,7 @@ package aging.health.katunyou;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -19,6 +20,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 
 public class Register extends AppCompatActivity  {
@@ -54,6 +58,7 @@ public class Register extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.page2);
         mAuth = FirebaseAuth.getInstance();
+        EventBus.getDefault().register(this);
 
         // buttonpost = (Button)findViewById(R.id.button2);
         // textpost  = (EditText)findViewById(R.id.textpost);
@@ -102,6 +107,33 @@ public class Register extends AppCompatActivity  {
 
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
+    }
+
+    public static final class MessageEvent {
+        public String message;
+
+        public MessageEvent(String message) {
+            this.message = message;
+        }
+    }
+
+    @Subscribe
+    public void onReceiveMessage(final Register.MessageEvent event){
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                String message = event.message;
+                AlertDialog.Builder builder =
+                        new AlertDialog.Builder(Register.this);
+                builder.setMessage(message);
+                builder.show();
+            }
+        });
+    }
 
 
 

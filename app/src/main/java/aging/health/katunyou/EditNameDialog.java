@@ -3,6 +3,7 @@ package aging.health.katunyou;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -10,13 +11,13 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class EditNameDialog extends DialogFragment {
 	private Button buttonadd;
 
 
-    public interface EditNameDialogListener {
-        void onFinishEditDialog(String inputText);
-    }
+
 
     public EditNameDialog() {
         // Empty constructor required for DialogFragment
@@ -34,16 +35,6 @@ public class EditNameDialog extends DialogFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_edit_name, container);
-        //mEditText = (EditText) view.findViewById(R.id.txt_your_name);
-
-
-
-
-
-        String title = getArguments().getString("title", "Enter Name");
-        getDialog().setTitle(title);
-        // Show soft keyboard automatically
-       // mEditText.requestFocus();
         getDialog().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
         return view;
     }
