@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.Auth;
@@ -32,17 +33,17 @@ public class Register extends AppCompatActivity  {
     FirebaseAuth mAuth;
     GoogleApiClient mGoogleApiClient;
     private static final String TAG = "Register";
-    // private EditText textpost;
-    // private Button buttonpost ;
-    // private EditText textname;
+    private EditText textName;
+    private EditText textLastname;
     private String hello;
 
-    private void postData(String userId, final String post, String name) {
+    private void postData ( String userId , String name, String lastname,String sex,String age,String weight,String high,String phone_number
+            ,String heart_rate,String walking_rate,String calories_rate,String sleep_time,String emergency_call,String emergency_name) {
 
-        Post itempost = new Post(name, post);
+        Post itempost = new Post( name , lastname, sex,age ,weight,high,phone_number,heart_rate,walking_rate,calories_rate,sleep_time,emergency_call,emergency_name );
 
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
-        mDatabase.child("users").child(userId).setValue(itempost).addOnCompleteListener(new OnCompleteListener<Void>() {
+        mDatabase.child("older").child(userId).setValue(itempost).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
 
@@ -59,10 +60,8 @@ public class Register extends AppCompatActivity  {
         setContentView(R.layout.page_register1);
         mAuth = FirebaseAuth.getInstance();
         EventBus.getDefault().register(this);
-
-        // buttonpost = (Button)findViewById(R.id.button2);
-        // textpost  = (EditText)findViewById(R.id.textpost);
-        //textname  = (EditText)findViewById(R.id.textname);
+        textLastname  = (EditText)findViewById(R.id.textLastname);
+        textName  = (EditText)findViewById(R.id.textName);
         hello = getIntent().getStringExtra("KEY");
         Toast.makeText(this, hello, Toast.LENGTH_SHORT).show();
         btnNext_to_page3 = (Button) findViewById(R.id.button_next_to_page3);
