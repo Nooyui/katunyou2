@@ -29,7 +29,7 @@ import org.greenrobot.eventbus.Subscribe;
 public class Register extends AppCompatActivity  {
 
 
-    Button btnNext_to_page3;
+    private Button btnNext_to_page3;
     FirebaseAuth mAuth;
     GoogleApiClient mGoogleApiClient;
     private static final String TAG = "Register";
@@ -37,10 +37,9 @@ public class Register extends AppCompatActivity  {
     private EditText textLastname;
     private String hello;
 
-    private void postData ( String userId , String name, String lastname,String sex,String age,String weight,String high,String phone_number
-            ,String heart_rate,String walking_rate,String calories_rate,String sleep_time,String emergency_call,String emergency_name) {
+    private void postData ( String userId , String name, String lastname) {
 
-        Post itempost = new Post( name , lastname, sex,age ,weight,high,phone_number,heart_rate,walking_rate,calories_rate,sleep_time,emergency_call,emergency_name );
+        Post itempost = new Post( name , lastname);
 
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
         mDatabase.child("older").child(userId).setValue(itempost).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -68,16 +67,14 @@ public class Register extends AppCompatActivity  {
 
 
 
-        // buttonpost.setOnClickListener(new View.OnClickListener() {
-        // @Override
-        // public void onClick(View view) {
+        btnNext_to_page3.setOnClickListener(new View.OnClickListener() {
+         @Override
+         public void onClick(View view) {
 
-        //  String gettextpost = textpost.getText().toString();
-        // String gettextname = textname.getText().toString();
-        // postData(FirebaseAuth.getInstance().getCurrentUser().getUid(),gettextpost, gettextname);
-        //}
-        // });
 
+
+        }
+        });
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
@@ -98,7 +95,9 @@ public class Register extends AppCompatActivity  {
         btnNext_to_page3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 Intent intent = new Intent(getApplicationContext(), Register_page2.class);
-                //intent.putExtra("text1", et.getText().toString());
+                String gettextlastname = textLastname.getText().toString();
+                String gettextname = textName.getText().toString();
+                postData(FirebaseAuth.getInstance().getCurrentUser().getUid(),gettextlastname, gettextname);
                 startActivity(intent);
             }
         });

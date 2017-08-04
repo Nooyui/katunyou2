@@ -16,7 +16,7 @@ public class Post {
     public String name , lastname, sex,age ,weight,high,phone_number,heart_rate,walking_rate,calories_rate,sleep_time,emergency_call,emergency_name ;
 
 
-    public Post() {
+    public Post(String name, String lastname) {
         // Default constructor required for calls to DataSnapshot.getValue(Post.class)
     }
 
