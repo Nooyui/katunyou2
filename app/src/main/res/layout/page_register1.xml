@@ -15,10 +15,10 @@
             android:textSize="30sp"
             android:textStyle="bold"
             android:textColor="@color/colorFront3"
-            android:layout_alignBaseline="@+id/textView3"
-            android:layout_alignBottom="@+id/textView3"
-            android:layout_alignRight="@+id/textView8"
-            android:layout_alignEnd="@+id/textView8" />
+        android:layout_alignBaseline="@+id/textView3"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_toRightOf="@+id/textView8"
+        android:layout_toEndOf="@+id/textView8" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -27,8 +27,8 @@
             android:textSize="30sp"
             android:textStyle="bold"
             android:textColor="@color/colorFront3"
-            android:layout_marginTop="19dp"
-            android:layout_alignParentTop="true"
+            android:layout_marginTop="9dp"
+            android:layout_below="@+id/textView10"
             android:layout_centerHorizontal="true" />
 
         <TextView
@@ -39,12 +39,9 @@
             android:textColor="@color/colorFront3"
             android:textSize="30sp"
             android:textStyle="bold"
-            android:layout_alignBaseline="@+id/textView3"
-            android:layout_alignBottom="@+id/textView3"
-            android:layout_toRightOf="@+id/textView3"
-            android:layout_toEndOf="@+id/textView3"
-            android:layout_marginLeft="35dp"
-            android:layout_marginStart="35dp" />
+            android:layout_above="@+id/textView5"
+            android:layout_toRightOf="@+id/imageView"
+            android:layout_toEndOf="@+id/imageView" />
 
     <TextView
         android:id="@+id/textView5"
@@ -86,10 +83,11 @@
         android:textColor="@color/colorFront3"
         android:textSize="15sp"
         android:textStyle="bold"
-        android:layout_marginTop="7dp"
         android:layout_below="@+id/imageView"
-        android:layout_alignLeft="@+id/editText1"
-        android:layout_alignStart="@+id/editText1" />
+        android:layout_alignLeft="@+id/textView5"
+        android:layout_alignStart="@+id/textView5"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp" />
 
     <TextView
         android:id="@+id/textView8"
@@ -99,9 +97,10 @@
         android:textColor="@color/colorFront3"
         android:textSize="15sp"
         android:textStyle="bold"
-        android:layout_below="@+id/editText1"
-        android:layout_alignLeft="@+id/editText2"
-        android:layout_alignStart="@+id/editText2" />
+        android:layout_below="@+id/textName"
+        android:layout_alignLeft="@+id/textView7"
+        android:layout_alignStart="@+id/textView7"
+        android:layout_marginTop="15dp" />
 
     <EditText
         android:id="@+id/textName"
@@ -110,9 +109,10 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text=""
-        android:layout_below="@+id/textView7"
-        android:layout_alignLeft="@+id/textView8"
-        android:layout_alignStart="@+id/textView8" />
+        android:layout_below="@+id/imageView"
+        android:layout_toRightOf="@+id/textView7"
+        android:layout_toEndOf="@+id/textView7"
+        android:layout_marginTop="6dp" />
     <EditText
         android:id="@+id/textLastname"
         android:layout_width="wrap_content"
@@ -120,8 +120,10 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text=""
-        android:layout_below="@+id/textView8"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignTop="@+id/textView8"
+        android:layout_alignLeft="@+id/textName"
+        android:layout_alignStart="@+id/textName"
+        android:layout_marginTop="10dp" />
 
     <TextView
         android:id="@+id/textView9"
@@ -131,60 +133,55 @@
         android:textColor="@color/colorFront3"
         android:textSize="15sp"
         android:textStyle="bold"
-        android:layout_below="@+id/editText2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="13dp" />
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="|"
-        android:textColor="@color/colorFront3"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        android:layout_alignBaseline="@+id/textView12"
-        android:layout_alignBottom="@+id/textView12"
+        android:layout_marginTop="7dp"
+        android:layout_below="@+id/textLastname"
         android:layout_centerHorizontal="true" />
 
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ชาย"
-        android:textColor="@color/colorFront3"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        android:layout_below="@+id/textView9"
-        android:layout_toLeftOf="@+id/textView9"
-        android:layout_toStartOf="@+id/textView9"
-        android:layout_marginTop="12dp" />
-
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="หญิง"
-        android:textColor="@color/colorFront3"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        android:layout_alignBaseline="@+id/textView11"
-        android:layout_alignBottom="@+id/textView11"
-        android:layout_toRightOf="@+id/textView3"
-        android:layout_toEndOf="@+id/textView3" />
 
     <Button
         android:id="@+id/button_next_to_page3"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:textColor="@color/colorFront2"
         android:text= " Next "
         android:textStyle="bold"
         android:textSize="20sp"
-        android:layout_margin="30dp"
         android:background="@color/colorpage"
-        android:layout_marginTop="24dp"
-        android:layout_below="@+id/textView10"
-        android:layout_centerHorizontal="true" />
+        android:layout_marginBottom="38dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/radioGroup"
+        android:layout_marginTop="21dp"
+        android:layout_below="@+id/textView9"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radioButtonMen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/imageView"
+            android:layout_alignStart="@+id/imageView"
+            android:layout_below="@+id/radioGroup"
+            android:layout_marginTop="10dp"
+            android:text="ชาย" />
+
+        <RadioButton
+            android:id="@+id/radioButtonWomen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/imageView"
+            android:layout_alignStart="@+id/imageView"
+            android:layout_below="@+id/radioGroup"
+            android:layout_marginTop="10dp"
+            android:text="หญิง" />
+
+    </RadioGroup>
+
 
 </RelativeLayout>

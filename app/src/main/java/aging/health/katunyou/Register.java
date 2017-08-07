@@ -10,8 +10,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.Toast;
-
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.ConnectionResult;
@@ -21,7 +21,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 
@@ -35,11 +34,16 @@ public class Register extends AppCompatActivity  {
     private static final String TAG = "Register";
     private EditText textName;
     private EditText textLastname;
+    private RadioButton radio_men;
+    private RadioButton radio_women;
+    private String Issex = "Men";
     private String hello;
 
-    private void postData ( String userId , String name, String lastname) {
 
-        Post itempost = new Post( name , lastname);
+
+    private void postData ( String userId , String name, String lastname,String sex) {
+
+        Post itempost = new Post( name , lastname, sex);
 
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
         mDatabase.child("older").child(userId).setValue(itempost).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -59,22 +63,75 @@ public class Register extends AppCompatActivity  {
         setContentView(R.layout.page_register1);
         mAuth = FirebaseAuth.getInstance();
         EventBus.getDefault().register(this);
-        textLastname  = (EditText)findViewById(R.id.textLastname);
-        textName  = (EditText)findViewById(R.id.textName);
+        textLastname = (EditText) findViewById(R.id.textLastname);
+        textName = (EditText) findViewById(R.id.textName);
         hello = getIntent().getStringExtra("KEY");
         Toast.makeText(this, hello, Toast.LENGTH_SHORT).show();
         btnNext_to_page3 = (Button) findViewById(R.id.button_next_to_page3);
+        RadioButton radio_men = (RadioButton) findViewById(R.id.radioButtonMen);
+        RadioButton radio_women = (RadioButton) findViewById(R.id.radioButtonWomen);
+
+
+        radio_men.setChecked(true);
+
+        radio_men.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Issex = "Men";
+                Toast.makeText(Register.this, " Men.",
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        radio_women.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Issex = "Women";
+                Toast.makeText(Register.this, " Women .",
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+
+
+
+//        if( radio_men.isChecked() ){
+//
+//            sex = "Men";
+//            Toast.makeText(Register.this, " Men failed.",
+//                    Toast.LENGTH_SHORT).show();
+//
+//        }else {
+//
+//            sex = "Women";
+//            Toast.makeText(Register.this, " Women failed.",
+//                    Toast.LENGTH_SHORT).show();
+//
+//        }
+
 
 
 
         btnNext_to_page3.setOnClickListener(new View.OnClickListener() {
-         @Override
-         public void onClick(View view) {
+            public void onClick(View arg0) {
+
+                String gettextlastname = textLastname.getText().toString();
+                String gettextname = textName.getText().toString();
 
 
+                Intent intent = new Intent(getApplicationContext(), Register_page2.class);
 
-        }
+
+                intent.putExtra("name",textName.getText().toString());
+                intent.putExtra("lastname",textLastname.getText().toString());
+                intent.putExtra("sex",Issex);
+
+                //postData(FirebaseAuth.getInstance().getCurrentUser().getUid(), gettextlastname, gettextname,Issex);
+                startActivity(intent);
+            }
         });
+
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
@@ -91,16 +148,6 @@ public class Register extends AppCompatActivity  {
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
 
-
-        btnNext_to_page3.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View arg0) {
-                Intent intent = new Intent(getApplicationContext(), Register_page2.class);
-                String gettextlastname = textLastname.getText().toString();
-                String gettextname = textName.getText().toString();
-                postData(FirebaseAuth.getInstance().getCurrentUser().getUid(),gettextlastname, gettextname);
-                startActivity(intent);
-            }
-        });
 
 
     }
@@ -170,9 +217,6 @@ public class Register extends AppCompatActivity  {
              case R.id.menu_exit:
                   System.exit(0);
               return true;
-
-
-
 
             default:
                 return false;

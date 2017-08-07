@@ -16,12 +16,11 @@ public class Post {
     public String name , lastname, sex,age ,weight,high,phone_number,heart_rate,walking_rate,calories_rate,sleep_time,emergency_call,emergency_name ;
 
 
-    public Post(String name, String lastname) {
+    public Post() {
         // Default constructor required for calls to DataSnapshot.getValue(Post.class)
     }
 
-    public Post(String name, String lastname,String sex,String age,String weight,String high,String phone_number
-            ,String heart_rate,String walking_rate,String calories_rate,String sleep_time,String emergency_call,String emergency_name) {
+    public Post(String name, String lastname ,String sex) {
         this.name = name;
         this.lastname = lastname;
         this.sex = sex;
@@ -29,7 +28,7 @@ public class Post {
         this.weight = weight;
         this.high = high;
         this.phone_number = phone_number;
-        this.heart_rate = heart_rate;this.name = name;
+        this.heart_rate = heart_rate;
         this.walking_rate = walking_rate;
         this.calories_rate = calories_rate;
         this.sleep_time = sleep_time;
@@ -46,16 +45,16 @@ public class Post {
         result.put("name", name);
         result.put("lastname", lastname);
         result.put("sex", sex);
-        result.put("age", age);
-        result.put("weight", weight);
-        result.put("high", high);
-        result.put("phone_number", phone_number);
-        result.put("heart_rate", heart_rate);
-        result.put("walking_rate", walking_rate);
-        result.put("calories_rate", calories_rate);
-        result.put("sleep_time", sleep_time);
-        result.put("emergency_call", emergency_call);
-        result.put("emergency_name", emergency_name);
+       // result.put("age", age);
+        //result.put("weight", weight);
+       // result.put("high", high);
+       // result.put("phone_number", phone_number);
+       // result.put("heart_rate", heart_rate);
+       // result.put("walking_rate", walking_rate);
+       // result.put("calories_rate", calories_rate);
+       // result.put("sleep_time", sleep_time);
+       // result.put("emergency_call", emergency_call);
+       // result.put("emergency_name", emergency_name);
 
 
 

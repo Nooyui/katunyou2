@@ -8,7 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
-
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -25,7 +24,6 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 
@@ -47,7 +45,7 @@ public class MainActivity extends AppCompatActivity  {
         button = (SignInButton) findViewById(R.id.sign_in_button);
         EventBus.getDefault().register(this);
 
-        button.setOnClickListener(new View.OnClickListener() {
+        button.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "signin button clicked");
