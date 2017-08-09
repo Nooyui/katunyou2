@@ -29,7 +29,7 @@ public class HomeAction extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_action);
         mAuth = FirebaseAuth.getInstance();
-        EventBus.getDefault().register(this);
+//        EventBus.getDefault().register(this);
         hello = getIntent().getStringExtra("KEY");
         Toast.makeText(this, hello, Toast.LENGTH_SHORT).show();
 
