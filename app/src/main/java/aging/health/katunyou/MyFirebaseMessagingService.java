@@ -25,6 +25,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         RemoteMessage.Notification notification = remoteMessage.getNotification();
         EventBus.getDefault().post(new Register.MessageEvent("  !!! Danger !!!  มีคนล้ม  "));
         Map<String, String> data = remoteMessage.getData();
+
         sendNotification(notification, data);
 
     }

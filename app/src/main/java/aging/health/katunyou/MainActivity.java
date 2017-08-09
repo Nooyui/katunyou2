@@ -145,7 +145,7 @@ public class MainActivity extends AppCompatActivity  {
 
                     Log.d(TAG, "firebase user email: " + email);
                     Toast.makeText(MainActivity.this, "user email: " + email, Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(MainActivity.this, Register.class);
+                    Intent intent = new Intent(MainActivity.this, HomeAction.class);
                     intent.putExtra("KEY", "Wellcom to Katunyou");
                     startActivity(intent);
                     finish();

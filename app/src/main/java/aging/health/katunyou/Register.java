@@ -60,7 +60,7 @@ public class Register extends AppCompatActivity  {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.page_register1);
+       setContentView(R.layout.page_register1);
         mAuth = FirebaseAuth.getInstance();
         EventBus.getDefault().register(this);
         textLastname = (EditText) findViewById(R.id.textLastname);
