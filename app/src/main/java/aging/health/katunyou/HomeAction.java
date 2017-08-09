@@ -37,16 +37,17 @@ public class HomeAction extends AppCompatActivity {
         host.setup();
 
         //Tab 1
-        TabHost.TabSpec spec = host.newTabSpec("Tab One");
+        TabHost.TabSpec spec = host.newTabSpec("แม่");
         spec.setContent(R.id.tab1);
         spec.setIndicator("แม่");
         host.addTab(spec);
 
         //Tab 2
-        spec = host.newTabSpec("Tab Two");
+        spec = host.newTabSpec("กล้อง");
         spec.setContent(R.id.tab2);
         spec.setIndicator("กล้อง");
         host.addTab(spec);
+
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
@@ -62,6 +63,7 @@ public class HomeAction extends AppCompatActivity {
                 })
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
+
 
     }
 

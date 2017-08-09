@@ -30,7 +30,6 @@ import org.greenrobot.eventbus.Subscribe;
 public class MainActivity extends AppCompatActivity  {
 
     public static final String TAG = MainActivity.class.getSimpleName();
-
     SignInButton button;
     FirebaseAuth mAuth;
     private final static int RC_SIGN_IN = 2;
