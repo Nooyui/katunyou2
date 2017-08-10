@@ -35,41 +35,39 @@
                         android:id="@+id/imageView6"
                         android:layout_width="130dp"
                         android:layout_height="130dp"
-                        android:layout_marginTop="30dp"
-                        app:srcCompat="@drawable/smile"
                         android:layout_alignParentTop="true"
-                        android:layout_centerHorizontal="true" />
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="30dp"
+                        app:srcCompat="@drawable/happy" />
 
                     <TextView
                         android:id="@+id/textView14"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="รายละเอียด"
-                        android:layout_marginRight="24dp"
-                        android:layout_marginEnd="24dp"
-                        android:layout_marginTop="37dp"
                         android:layout_below="@+id/imageView6"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:layout_marginTop="16dp"
                         android:layout_toLeftOf="@+id/imageView6"
-                        android:layout_toStartOf="@+id/imageView6" />
+                        android:layout_toStartOf="@+id/imageView6"
+                        android:text="รายละเอียด" />
 
                     <ImageView
                         android:id="@+id/imageView7"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         app:srcCompat="@drawable/heart"
-                        android:layout_alignBottom="@+id/textView23"
+                        android:layout_above="@+id/imageView8"
                         android:layout_alignLeft="@+id/textView14"
-                        android:layout_alignStart="@+id/textView14"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginStart="15dp" />
+                        android:layout_alignStart="@+id/textView14" />
 
                     <ImageView
                         android:id="@+id/imageView8"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         app:srcCompat="@drawable/walk"
-                        android:layout_marginTop="16dp"
-                        android:layout_below="@+id/imageView7"
+                        android:layout_below="@+id/textView23"
+                        android:layout_marginTop="27dp"
                         android:layout_alignLeft="@+id/imageView7"
                         android:layout_alignStart="@+id/imageView7" />
 
@@ -77,8 +75,8 @@
                         android:id="@+id/imageView9"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
+                        android:layout_marginTop="20dp"
                         app:srcCompat="@drawable/cal"
-                        android:layout_marginTop="21dp"
                         android:layout_below="@+id/imageView8"
                         android:layout_alignLeft="@+id/imageView8"
                         android:layout_alignStart="@+id/imageView8" />
@@ -88,8 +86,8 @@
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         app:srcCompat="@drawable/sleep"
-                        android:layout_marginTop="19dp"
-                        android:layout_below="@+id/imageView9"
+                        android:layout_marginTop="21dp"
+                        android:layout_below="@+id/button9"
                         android:layout_alignLeft="@+id/imageView9"
                         android:layout_alignStart="@+id/imageView9" />
 
@@ -100,17 +98,17 @@
                         android:text="การเต้นของหัวใจ"
                         android:layout_alignBaseline="@+id/textView27"
                         android:layout_alignBottom="@+id/textView27"
-                        android:layout_toRightOf="@+id/textView14"
-                        android:layout_toEndOf="@+id/textView14" />
+                        android:layout_alignLeft="@+id/textView26"
+                        android:layout_alignStart="@+id/textView26" />
 
                     <TextView
                         android:id="@+id/textView24"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="การเดิน"
-                        android:layout_alignBottom="@+id/imageView8"
-                        android:layout_toRightOf="@+id/textView14"
-                        android:layout_toEndOf="@+id/textView14" />
+                        android:layout_above="@+id/imageView9"
+                        android:layout_alignLeft="@+id/textView23"
+                        android:layout_alignStart="@+id/textView23" />
 
                     <TextView
                         android:id="@+id/textView25"
@@ -119,8 +117,8 @@
                         android:text="การเผาผลาญแคลลอรี่"
                         android:layout_alignBaseline="@+id/textView29"
                         android:layout_alignBottom="@+id/textView29"
-                        android:layout_toRightOf="@+id/textView14"
-                        android:layout_toEndOf="@+id/textView14" />
+                        android:layout_alignLeft="@+id/textView24"
+                        android:layout_alignStart="@+id/textView24" />
 
                     <TextView
                         android:id="@+id/textView26"
@@ -128,20 +126,22 @@
                         android:layout_height="wrap_content"
                         android:text="เวลาที่นอนหลับ"
                         android:layout_alignBottom="@+id/imageView10"
-                        android:layout_toRightOf="@+id/textView14"
-                        android:layout_toEndOf="@+id/textView14" />
+                        android:layout_toRightOf="@+id/imageView10"
+                        android:layout_toEndOf="@+id/imageView10"
+                        android:layout_marginLeft="36dp"
+                        android:layout_marginStart="36dp" />
 
                     <TextView
                         android:id="@+id/textView27"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="ปรกติ"
-                        android:layout_marginLeft="31dp"
-                        android:layout_marginStart="31dp"
-                        android:layout_marginTop="30dp"
                         android:layout_below="@+id/textView14"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginStart="14dp"
+                        android:layout_marginTop="31dp"
+                        android:layout_toEndOf="@+id/textView25"
                         android:layout_toRightOf="@+id/textView25"
-                        android:layout_toEndOf="@+id/textView25" />
+                        android:text="ปรกติ" />
 
                     <TextView
                         android:id="@+id/textView28"
@@ -156,7 +156,7 @@
                         android:id="@+id/textView29"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_above="@+id/imageView10"
+                        android:layout_alignBottom="@+id/imageView9"
                         android:layout_alignLeft="@+id/textView28"
                         android:layout_alignStart="@+id/textView28"
                         android:text="ดีเยี่ยม" />
@@ -170,80 +170,61 @@
                         android:layout_alignTop="@+id/textView26"
                         android:text="ปรกติ" />
 
-                    <TextView
-                        android:id="@+id/textView32"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignEnd="@+id/textView31"
-                        android:layout_alignRight="@+id/textView31"
-                        android:layout_alignTop="@+id/textView28"
-                        android:text=">" />
-
-                    <TextView
-                        android:id="@+id/textView33"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignLeft="@+id/textView32"
-                        android:layout_alignStart="@+id/textView32"
-                        android:layout_alignTop="@+id/textView29"
-                        android:text=">" />
-
-                    <TextView
-                        android:id="@+id/textView34"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignEnd="@+id/textView33"
-                        android:layout_alignRight="@+id/textView33"
-                        android:layout_alignTop="@+id/textView30"
-                        android:text=">" />
 
                     <Button
                         android:id="@+id/button7"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:layout_alignTop="@+id/imageView7"
-                        android:layout_toEndOf="@+id/textView29"
-                        android:layout_toRightOf="@+id/textView29"
-                        android:text=">" />
+                        android:text=">"
+                        android:background="@color/colorFront2"
+                        android:layout_above="@+id/imageView8"
+                        android:layout_alignLeft="@+id/button8"
+                        android:layout_alignStart="@+id/button8" />
 
                     <Button
                         android:id="@+id/button8"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:layout_alignLeft="@+id/button7"
-                        android:layout_alignStart="@+id/button7"
-                        android:layout_alignTop="@+id/imageView8"
-                        android:text=">" />
+                        android:background="@color/colorFront2"
+                        android:text=">"
+                        android:layout_above="@+id/imageView9"
+                        android:layout_alignLeft="@+id/button9"
+                        android:layout_alignStart="@+id/button9" />
 
                     <Button
                         android:id="@+id/button9"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:layout_below="@+id/textView28"
-                        android:layout_marginTop="13dp"
-                        android:layout_toEndOf="@+id/textView29"
-                        android:layout_toRightOf="@+id/textView29"
-                        android:text=">" />
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@color/colorFront2"
+                        android:text=">"
+                        android:layout_below="@+id/button8"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="10dp" />
 
                     <Button
                         android:id="@+id/button10"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
+                        android:background="@color/colorFront2"
+                        android:text=">"
+                        android:layout_below="@+id/button9"
                         android:layout_alignLeft="@+id/button9"
                         android:layout_alignStart="@+id/button9"
-                        android:layout_below="@+id/button9"
-                        android:text=">" />
+                        android:layout_marginTop="8dp" />
 
                     <Button
-                        android:id="@+id/button_call_1"
+                        android:id="@+id/button_call_3"
                         android:layout_width="300dp"
                         android:layout_height="wrap_content"
                         android:layout_alignParentBottom="true"
                         android:layout_centerHorizontal="true"
                         android:layout_marginBottom="19dp"
                         android:background="@color/colorpage"
+                        android:textColor="@color/colorFront2"
                         android:text="โทรหาท่าน" />
-
 
                 </RelativeLayout>
 
@@ -260,7 +241,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="23dp"
                         android:layout_marginStart="23dp"
-                        android:layout_marginTop="6dp"/>
+                        android:layout_marginTop="6dp" />
 
 
                 </RelativeLayout>

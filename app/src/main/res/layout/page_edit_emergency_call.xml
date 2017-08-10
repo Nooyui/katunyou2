@@ -1,63 +1,151 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorFront2">
 
-
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="30dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="27dp"
-        android:text="โรงพยาบาลที่ 1"
-        android:textSize="10sp"/>
+        android:layout_marginLeft="35dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="46dp"
+        app:srcCompat="@drawable/hostpital" />
 
     <TextView
-        android:id="@+id/textView17"
+        android:id="@+id/textView18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="โรงพยาบาล กรุงเทพ"
+        android:text="กรุงเทพ"
         android:textStyle="bold"
-        android:layout_below="@+id/textView15"
-        android:layout_alignLeft="@+id/textView36"
-        android:layout_alignStart="@+id/textView36" />
+        android:layout_above="@+id/textView27"
+        android:layout_alignLeft="@+id/textView20"
+        android:layout_alignStart="@+id/textView20" />
 
     <TextView
-        android:id="@+id/textView36"
+        android:id="@+id/textView27"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="เบอร์โทร"
+        android:text="02 207 1025"
         android:textSize="10sp"
-        android:layout_below="@+id/textView17"
-        android:layout_alignLeft="@+id/textView15"
-        android:layout_alignStart="@+id/textView15" />
+        android:layout_marginBottom="7dp"
+        android:layout_alignBottom="@+id/imageView11"
+        android:layout_alignLeft="@+id/textView18"
+        android:layout_alignStart="@+id/textView18" />
 
     <TextView
-        android:id="@+id/textView37"
+        android:id="@+id/textView21"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="052 089 888"
-        android:layout_below="@+id/textView36"
-        android:layout_alignLeft="@+id/textView36"
-        android:layout_alignStart="@+id/textView36" />
-
-    <TextView
-        android:id="@+id/textView38"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="โทรเลย"
-        android:textStyle="bold"
+        android:layout_alignBaseline="@+id/textView18"
+        android:layout_alignBottom="@+id/textView18"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="42dp"
+        android:layout_marginRight="42dp"
+        android:text="แก้ไข"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="15sp"
-        android:layout_marginRight="64dp"
-        android:layout_marginEnd="64dp"
-        android:layout_above="@+id/textView37"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:textStyle="bold" />
+
+
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignLeft="@+id/imageView11"
+        android:layout_alignStart="@+id/imageView11"
+        android:layout_below="@+id/imageView11"
+        android:layout_marginTop="94dp"
+        app:srcCompat="@drawable/hostpital" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="มหาราช เชียงใหม่"
+        android:textStyle="bold"
+        android:layout_marginTop="14dp"
+        android:layout_alignTop="@+id/imageView12"
+        android:layout_toRightOf="@+id/imageView12"
+        android:layout_toEndOf="@+id/imageView12"
+        android:layout_marginLeft="40dp"
+        android:layout_marginStart="40dp" />
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="053 936 150"
+        android:textSize="10sp"
+        android:layout_below="@+id/textView23"
+        android:layout_alignLeft="@+id/textView22"
+        android:layout_alignStart="@+id/textView22" />
+
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView21"
+        android:layout_alignStart="@+id/textView21"
+        android:layout_alignTop="@+id/textView20"
+        android:text="แก้ไข"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignLeft="@+id/imageView12"
+        android:layout_alignStart="@+id/imageView12"
+        android:layout_below="@+id/imageView12"
+        android:layout_marginTop="94dp"
+        app:srcCompat="@drawable/hostpital" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:text="เชียงใหม่ใกล้หมอ"
+        android:textStyle="bold"
+        android:layout_alignBottom="@+id/imageView13"
+        android:layout_alignLeft="@+id/textView29"
+        android:layout_alignStart="@+id/textView29" />
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="053 823 270"
+        android:textSize="10sp"
+        android:layout_alignBottom="@+id/imageView13"
+        android:layout_alignLeft="@+id/textView20"
+        android:layout_alignStart="@+id/textView20" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView22"
+        android:layout_alignBottom="@+id/textView22"
+        android:layout_alignLeft="@+id/textView23"
+        android:layout_alignStart="@+id/textView23"
+        android:text="แก้ไข"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+
+
 </RelativeLayout>

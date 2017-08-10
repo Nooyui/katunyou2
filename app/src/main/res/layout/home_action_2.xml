@@ -35,10 +35,10 @@
                         android:id="@+id/imageView6"
                         android:layout_width="130dp"
                         android:layout_height="130dp"
-                        android:layout_marginTop="30dp"
-                        app:srcCompat="@drawable/smile"
                         android:layout_alignParentTop="true"
-                        android:layout_centerHorizontal="true" />
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="30dp"
+                        app:srcCompat="@drawable/sad" />
 
                     <TextView
                         android:id="@+id/textView14"
@@ -135,10 +135,10 @@
                         android:id="@+id/textView27"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="ปรกติ"
-                        android:layout_marginLeft="31dp"
-                        android:layout_marginStart="31dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp"
                         android:layout_marginTop="30dp"
+                        android:text="ปรกติ"
                         android:layout_below="@+id/textView14"
                         android:layout_toRightOf="@+id/textView25"
                         android:layout_toEndOf="@+id/textView25" />
@@ -147,10 +147,11 @@
                         android:id="@+id/textView28"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignEnd="@+id/textView27"
-                        android:layout_alignRight="@+id/textView27"
-                        android:layout_alignTop="@+id/textView24"
-                        android:text="ปรกติ" />
+                        android:text="ผิดปกติ"
+                        android:layout_alignBaseline="@+id/textView24"
+                        android:layout_alignBottom="@+id/textView24"
+                        android:layout_alignLeft="@+id/textView27"
+                        android:layout_alignStart="@+id/textView27" />
 
                     <TextView
                         android:id="@+id/textView29"
@@ -159,7 +160,7 @@
                         android:layout_above="@+id/imageView10"
                         android:layout_alignLeft="@+id/textView28"
                         android:layout_alignStart="@+id/textView28"
-                        android:text="ดีเยี่ยม" />
+                        android:text="ผิดปกติ" />
 
                     <TextView
                         android:id="@+id/textView30"
@@ -168,74 +169,59 @@
                         android:layout_alignLeft="@+id/textView29"
                         android:layout_alignStart="@+id/textView29"
                         android:layout_alignTop="@+id/textView26"
-                        android:text="ปรกติ" />
+                        android:text="ผิดปกติ" />
+
+
 
                     <TextView
-                        android:id="@+id/textView32"
+                        android:id="@+id/textView35"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignEnd="@+id/textView31"
-                        android:layout_alignRight="@+id/textView31"
-                        android:layout_alignTop="@+id/textView28"
-                        android:text=">" />
-
-                    <TextView
-                        android:id="@+id/textView33"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignLeft="@+id/textView32"
-                        android:layout_alignStart="@+id/textView32"
-                        android:layout_alignTop="@+id/textView29"
-                        android:text=">" />
-
-                    <TextView
-                        android:id="@+id/textView34"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignEnd="@+id/textView33"
-                        android:layout_alignRight="@+id/textView33"
-                        android:layout_alignTop="@+id/textView30"
-                        android:text=">" />
+                        android:layout_marginBottom="28dp"
+                        android:text="โทรหาท่าน"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignRight="@+id/textView26"
+                        android:layout_alignEnd="@+id/textView26" />
 
                     <Button
                         android:id="@+id/button7"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
+                        android:text=">"
                         android:layout_alignTop="@+id/imageView7"
-                        android:layout_toEndOf="@+id/textView29"
-                        android:layout_toRightOf="@+id/textView29"
-                        android:text=">" />
+                        android:layout_alignLeft="@+id/button8"
+                        android:layout_alignStart="@+id/button8" />
 
                     <Button
                         android:id="@+id/button8"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:layout_alignLeft="@+id/button7"
-                        android:layout_alignStart="@+id/button7"
-                        android:layout_alignTop="@+id/imageView8"
-                        android:text=">" />
+                        android:text=">"
+                        android:layout_below="@+id/button7"
+                        android:layout_alignLeft="@+id/button9"
+                        android:layout_alignStart="@+id/button9" />
 
                     <Button
                         android:id="@+id/button9"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:layout_below="@+id/textView28"
-                        android:layout_marginTop="13dp"
-                        android:layout_toEndOf="@+id/textView29"
-                        android:layout_toRightOf="@+id/textView29"
-                        android:text=">" />
+                        android:text=">"
+                        android:layout_above="@+id/button10"
+                        android:layout_alignLeft="@+id/button10"
+                        android:layout_alignStart="@+id/button10" />
 
                     <Button
                         android:id="@+id/button10"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:layout_alignLeft="@+id/button9"
-                        android:layout_alignStart="@+id/button9"
-                        android:layout_below="@+id/button9"
-                        android:text=">" />
+                        android:text=">"
+                        android:layout_alignBaseline="@+id/textView30"
+                        android:layout_alignBottom="@+id/textView30"
+                        android:layout_toRightOf="@+id/button11"
+                        android:layout_toEndOf="@+id/button11" />
 
                     <Button
-                        android:id="@+id/button_call_1"
+                        android:id="@+id/button_call_2"
                         android:layout_width="300dp"
                         android:layout_height="wrap_content"
                         android:layout_alignParentBottom="true"

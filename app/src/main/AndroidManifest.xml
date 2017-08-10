@@ -46,9 +46,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".About" />
+        <activity android:name=".EditDevice" />
+        <activity android:name=".EditEmberanceCall" />
+        <activity android:name=".EditHealth" />
+        <activity android:name=".EditUser" />
+        <activity android:name=".Setting" />
         <activity android:name=".Register" />
         <activity android:name=".Register_page2" />
         <activity android:name=".Register_page3" />
+        <activity android:name=".EmergencyCall" />
 
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"

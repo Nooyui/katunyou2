@@ -3,9 +3,12 @@ package aging.health.katunyou;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TabHost;
 import android.widget.Toast;
 
@@ -16,6 +19,7 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.firebase.auth.FirebaseAuth;
 
 import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 public class HomeAction extends AppCompatActivity {
     TabHost tabhost;
@@ -23,16 +27,17 @@ public class HomeAction extends AppCompatActivity {
     GoogleApiClient mGoogleApiClient;
     private static final String TAG = "HomeAction";
     private String hello;
+     Button EmergencyCall_button ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.home_action);
+        setContentView(R.layout.home_action_3);
         mAuth = FirebaseAuth.getInstance();
-//        EventBus.getDefault().register(this);
+        EventBus.getDefault().register(this);
         hello = getIntent().getStringExtra("KEY");
         Toast.makeText(this, hello, Toast.LENGTH_SHORT).show();
-
+        EmergencyCall_button = (Button) findViewById(R.id.button_call_3);
         TabHost host = (TabHost) findViewById(R.id.tabhost);
         host.setup();
 
@@ -41,6 +46,13 @@ public class HomeAction extends AppCompatActivity {
         spec.setContent(R.id.tab1);
         spec.setIndicator("แม่");
         host.addTab(spec);
+        EmergencyCall_button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                Intent intent = new Intent(getApplicationContext(), EmergencyCall.class);
+                startActivity(intent);
+            }
+        });
+
 
         //Tab 2
         spec = host.newTabSpec("กล้อง");
@@ -58,12 +70,11 @@ public class HomeAction extends AppCompatActivity {
                 .enableAutoManage(this, new GoogleApiClient.OnConnectionFailedListener() {
                     @Override
                     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-                        Toast.makeText(HomeAction.this, "Hi", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(HomeAction.this, "Hi", Toast.LENGTH_SHORT).show();
                     }
                 })
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
-
 
     }
 
@@ -81,8 +92,13 @@ public class HomeAction extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         switch (item.getItemId()) {
             case R.id.menu_settings:
-                Intent intent = new Intent(getApplicationContext(), SettingActivity.class);
+                Intent intent = new Intent(getApplicationContext(), Setting.class);
                 startActivity(intent);
+                return true;
+
+            case R.id.menu_token:
+                Intent intent_i = new Intent(getApplicationContext(), SettingActivity.class);
+                startActivity(intent_i);
                 return true;
 
 
@@ -105,5 +121,34 @@ public class HomeAction extends AppCompatActivity {
                 return false;
         }
 
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
+    }
+
+    public static final class MessageEvent {
+        public String message;
+
+        public MessageEvent(String message) {
+            this.message = message;
+        }
+    }
+
+    @Subscribe
+    public void onReceiveMessage(final Register.MessageEvent event) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                String message = event.message;
+                AlertDialog.Builder builder =
+                        new AlertDialog.Builder(HomeAction.this);
+                builder.setMessage(message);
+                builder.show();
+            }
+        });
     }
 }

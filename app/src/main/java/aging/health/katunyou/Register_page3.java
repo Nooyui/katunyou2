@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.Auth;
@@ -20,6 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class Register_page3 extends AppCompatActivity   {
     FirebaseAuth mAuth;
     GoogleApiClient mGoogleApiClient;
+    private Button buttonSave ;
 
 
     @Override
@@ -27,8 +29,19 @@ public class Register_page3 extends AppCompatActivity   {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.page_register3);
         mAuth = FirebaseAuth.getInstance();
+        buttonSave = (Button) findViewById(R.id.buttonSave);
+
+        buttonSave.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                Intent intent = new Intent(getApplicationContext(), HomeAction.class);
+                //intent.putExtra("text1", et.getText().toString());
 
 
+
+              //  postData(FirebaseAuth.getInstance().getCurrentUser().getUid(), name, lastname,sex);
+                startActivity(intent);
+            }
+        });
 
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
