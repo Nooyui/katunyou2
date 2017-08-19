@@ -217,8 +217,7 @@
                         android:text=">"
                         android:layout_alignBaseline="@+id/textView30"
                         android:layout_alignBottom="@+id/textView30"
-                        android:layout_toRightOf="@+id/button11"
-                        android:layout_toEndOf="@+id/button11" />
+                        />
 
                     <Button
                         android:id="@+id/button_call_2"

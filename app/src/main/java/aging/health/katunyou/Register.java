@@ -41,9 +41,11 @@ public class Register extends AppCompatActivity  {
 
 
 
-    private void postData ( String userId , String name, String lastname,String sex) {
 
-        Post itempost = new Post( name , lastname, sex);
+    private String name , lastname , sex ,age,weight,high,phone_number;
+    private void postData ( String userId , String name, String lastname,String sex ){
+
+        Post itempost = new Post( name , lastname, sex,age,weight,high,phone_number);
 
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
         mDatabase.child("older").child(userId).setValue(itempost).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -57,14 +59,17 @@ public class Register extends AppCompatActivity  {
     }
 
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
        setContentView(R.layout.page_register1);
         mAuth = FirebaseAuth.getInstance();
         EventBus.getDefault().register(this);
+
         textLastname = (EditText) findViewById(R.id.textLastname);
         textName = (EditText) findViewById(R.id.textName);
+
         hello = getIntent().getStringExtra("KEY");
         Toast.makeText(this, hello, Toast.LENGTH_SHORT).show();
         btnNext_to_page3 = (Button) findViewById(R.id.button_next_to_page3);
@@ -123,11 +128,11 @@ public class Register extends AppCompatActivity  {
                 Intent intent = new Intent(getApplicationContext(), Register_page2.class);
 
 
-                intent.putExtra("name",textName.getText().toString());
-                intent.putExtra("lastname",textLastname.getText().toString());
-                intent.putExtra("sex",Issex);
+                intent.putExtra("getname",textName.getText().toString());
+                intent.putExtra("getlastname",textLastname.getText().toString());
+                intent.putExtra("getsex",Issex);
 
-                //postData(FirebaseAuth.getInstance().getCurrentUser().getUid(), gettextlastname, gettextname,Issex);
+               postData(FirebaseAuth.getInstance().getCurrentUser().getUid(), gettextlastname, gettextname,Issex);
                 startActivity(intent);
             }
         });
@@ -183,44 +188,5 @@ public class Register extends AppCompatActivity  {
 
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        switch (item.getItemId()) {
-            case R.id.menu_settings:
-                Intent intent = new Intent(getApplicationContext(), SettingActivity.class);
-                startActivity(intent);
-                return true;
-
-
-
-            case R.id.menu_logout:
-                if(mAuth!=null){
-                    mAuth.signOut();
-                    Auth.GoogleSignInApi.signOut(mGoogleApiClient);
-                    intent = new Intent(getApplicationContext(), MainActivity.class);
-                    startActivity(intent);
-                    finish();
-
-                }
-                return true;
-
-             case R.id.menu_exit:
-                  System.exit(0);
-              return true;
-
-            default:
-                return false;
-        }
 
     }
-}

@@ -10,18 +10,44 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Register_page3 extends AppCompatActivity   {
+
+    private Button buttonNext ;
+    private EditText textLastname,textName,textAge , textWeight , textHigh,textPhone;
     FirebaseAuth mAuth;
     GoogleApiClient mGoogleApiClient;
-    private Button buttonSave ;
+    private String Issex = "Men";
+
+    private String name , lastname , sex ,age,weight,high,phone_number;
+    private void postData ( String userId , String name, String lastname,String sex, String age ,String weight,String high,String phone_number ){
+
+        Post itempost = new Post( name , lastname, sex,age,weight,high,phone_number);
+
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+        mDatabase.child("older").child(userId).setValue(itempost).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+
+
+            }
+        });
+
+    }
+
 
 
     @Override
@@ -29,18 +55,40 @@ public class Register_page3 extends AppCompatActivity   {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.page_register3);
         mAuth = FirebaseAuth.getInstance();
-        buttonSave = (Button) findViewById(R.id.buttonSave);
 
-        buttonSave.setOnClickListener(new View.OnClickListener() {
+        Intent intent = getIntent();
+        name = intent.getStringExtra("getname");
+        lastname = intent.getStringExtra("getlastname");
+        sex = intent.getStringExtra("getsex");
+        age = intent.getStringExtra("getage");
+        weight = intent.getStringExtra("getweight");
+        high = intent.getStringExtra("gethigh");
+
+
+
+        buttonNext = (Button) findViewById(R.id.buttonNext);
+        textPhone = (EditText) findViewById(R.id.editText);
+        textLastname = (EditText) findViewById(R.id.textLastname);
+        textName = (EditText) findViewById(R.id.textName);
+        textAge = (EditText) findViewById(R.id.editText);
+        textWeight = (EditText) findViewById(R.id.editText3);
+        textHigh = (EditText) findViewById(R.id.editText4);
+        RadioButton radio_men = (RadioButton) findViewById(R.id.radioButtonMen);
+        RadioButton radio_women = (RadioButton) findViewById(R.id.radioButtonWomen);
+
+        buttonNext.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                Intent intent = new Intent(getApplicationContext(), HomeAction.class);
-                //intent.putExtra("text1", et.getText().toString());
+                Intent intent = new Intent(getApplicationContext(), SettingDeviceNumber.class);
 
 
 
-              //  postData(FirebaseAuth.getInstance().getCurrentUser().getUid(), name, lastname,sex);
+                String gettextPhoneNumber =textPhone.getText().toString();
+
+                intent.putExtra("phone",textPhone.getText().toString());
+
+                postData(FirebaseAuth.getInstance().getCurrentUser().getUid(), name, lastname,sex,age,weight,high,gettextPhoneNumber);
                 startActivity(intent);
-            }
+             }
         });
 
 
@@ -64,53 +112,9 @@ public class Register_page3 extends AppCompatActivity   {
 
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        switch (item.getItemId()) {
-            case R.id.menu_settings:
-                Intent intent = new Intent(getApplicationContext(), SettingActivity.class);
-                startActivity(intent);
-                return true;
-
-
-            case R.id.menu_logout:
-                if(mAuth!=null) {
-                    mAuth.signOut();
-                    Auth.GoogleSignInApi.signOut(mGoogleApiClient);
-                    intent = new Intent(getApplicationContext(), MainActivity.class);
-                    startActivity(intent);
-                    finish();
-                }
-                return true;
-
-         case R.id.menu_exit:
-                //System.exit(0);
-                return false;
 
 
 
-            default:
-                return false;
-        }
-    }
-
-
-    public void onShowDialogWindow(View v) {
-        FragmentManager fm = getSupportFragmentManager();
-        EditNameDialog editNameDialog = EditNameDialog.newInstance("                   สวัสดี");
-        editNameDialog.show(fm, "fragment_edit_name");
-
-    }
 
 }
 

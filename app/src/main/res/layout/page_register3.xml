@@ -11,13 +11,13 @@
         android:id="@+id/textView2"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:textColor="@color/colorFront3"
+        android:textColor="@color/colorFront5"
         android:layout_alignBaseline="@+id/textView3"
         android:layout_alignBottom="@+id/textView3"
-        android:layout_toLeftOf="@+id/textView3"
-        android:layout_toStartOf="@+id/textView3"
-        android:layout_marginRight="43dp"
-        android:layout_marginEnd="43dp" />
+        android:layout_alignRight="@+id/textView13"
+        android:layout_alignEnd="@+id/textView13"
+        android:layout_marginRight="14dp"
+        android:layout_marginEnd="14dp" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -25,45 +25,60 @@
         android:id="@+id/textView3"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:textColor="@color/colorFront3"
-        android:layout_marginTop="25dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:textColor="@color/colorFront5"
+        android:layout_alignBaseline="@+id/textView4"
+        android:layout_alignBottom="@+id/textView4"
+        android:layout_alignLeft="@+id/imageView3"
+        android:layout_alignStart="@+id/imageView3" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=">"
+        android:textColor="@color/colorFront5"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_alignBaseline="@+id/textView5"
+        android:layout_alignBottom="@+id/textView5"
+        android:layout_alignRight="@+id/imageView3"
+        android:layout_alignEnd="@+id/imageView3"
+        android:layout_marginRight="11dp"
+        android:layout_marginEnd="11dp" />
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=">"
         android:textColor="@color/colorFront3"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:layout_alignBaseline="@+id/textView3"
-        android:layout_alignBottom="@+id/textView3"
-        android:layout_toRightOf="@+id/textView3"
-        android:layout_toEndOf="@+id/textView3"
-        android:layout_marginLeft="35dp"
-        android:layout_marginStart="35dp" />
+        android:layout_marginTop="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/editText"
+        android:layout_alignEnd="@+id/editText"
+        android:layout_marginRight="24dp"
+        android:layout_marginEnd="24dp" />
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="80dp"
         android:layout_height="80dp"
         app:srcCompat="@drawable/old"
-        android:layout_marginBottom="66dp"
-        android:layout_above="@+id/textView13"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/textViewWeight"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="64dp" />
 
 
     <EditText
         android:id="@+id/editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/buttonSave"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="78dp"
+        android:layout_marginBottom="85dp"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:layout_above="@+id/buttonNext"
+        android:layout_centerHorizontal="true" />
 
 
 
@@ -76,12 +91,10 @@
         android:textColor="@color/colorFront3"
         android:textSize="15sp"
         android:textStyle="bold"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="57dp"
         android:layout_below="@+id/textView2"
-        android:layout_alignLeft="@+id/editText"
-        android:layout_alignStart="@+id/editText"
-        android:layout_marginLeft="17dp"
-        android:layout_marginStart="17dp" />
+        android:layout_alignRight="@+id/textView5"
+        android:layout_alignEnd="@+id/textView5" />
 
 
     <TextView
@@ -99,12 +112,12 @@
         android:layout_marginEnd="19dp" />
 
     <Button
-        android:id="@+id/buttonSave"
-        android:layout_width="match_parent"
+        android:id="@+id/buttonNext"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:textColor="@color/colorFront2"
         android:onClick="onShowDialogWindow"
-        android:text= " SAVE "
+        android:text= "NEXT"
         android:textStyle="bold"
         android:textSize="20sp"
         android:layout_margin="30dp"

@@ -142,7 +142,7 @@
         android:layout_alignStart="@+id/imageView14" />
 
     <TextView
-        android:id="@+id/textView25"
+        android:id="@+id/textViewabout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"

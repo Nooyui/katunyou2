@@ -20,7 +20,7 @@ public class Post {
         // Default constructor required for calls to DataSnapshot.getValue(Post.class)
     }
 
-    public Post(String name, String lastname ,String sex) {
+    public Post(String name, String lastname ,String sex, String age ,String weight,String high,String phone_number) {
         this.name = name;
         this.lastname = lastname;
         this.sex = sex;
@@ -38,6 +38,7 @@ public class Post {
 
     }
 
+
     // [START post_to_map]
     @Exclude
     public Map<String, Object> toMap() {
@@ -45,10 +46,10 @@ public class Post {
         result.put("name", name);
         result.put("lastname", lastname);
         result.put("sex", sex);
-       // result.put("age", age);
-        //result.put("weight", weight);
-       // result.put("high", high);
-       // result.put("phone_number", phone_number);
+        result.put("age", age);
+        result.put("weight", weight);
+        result.put("high", high);
+        result.put("phone_number", phone_number);
        // result.put("heart_rate", heart_rate);
        // result.put("walking_rate", walking_rate);
        // result.put("calories_rate", calories_rate);
